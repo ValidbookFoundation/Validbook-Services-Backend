@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Statement (general)</title>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #statement_template {
+      width: 816px;
+      box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+      position: relative;
+      box-sizing: border-box;
+      border: 1px solid #e1e1e1;
+      border-radius: 2px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+    #text {
+      font-family: Roboto;
+      width: 100%;
+      font-size: 14px;
+      overflow-y: auto;
+      outline: none;
+      resize: none;
+      padding: 0;
+      border: none;
+      min-height: 500px;
+    }
+    .footer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #created,
+    #creator {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      text-align: center;
+      font-size: 14px;
+      width: 100%;
+      border-bottom: 1px solid #e1e1e1;
+      position: absolute;
+    }
+    .date_field,
+    .signer_field {
+      position: relative;
+      width: 190px;
+      font-size: 14px;
+      height: 42px;
+    }
+    .signer_field label,
+    .date_field label {
+      display: block;
+      position: relative;
+      top: 24px;
+      text-align: center;
+    }
+    .statement_blank_content {
+      padding: 20px;
+      border: 1px solid #e1e1e1;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <section id="statement_template">
+    <div class="statement_blank_content">
+      <textarea placeholder="Write statement..." id="text" name="text"></textarea>
+      <div class="footer">
+        <div class="date_field">
+          <input type="text" id="created" name="created" value="" readonly />
+          <label for="created">Date</label>
+        </div>
+        <div class="signer_field">
+          <input type="text" id="creator" name="creator" value="" readonly />
+          <label for="creator">Signer</label>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

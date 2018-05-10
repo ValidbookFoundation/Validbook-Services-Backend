@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File Signing</title>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    .certificate_template {
+      margin: 0 auto;
+      width: 608px;
+      box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+      height: 350px;
+      font-family: Roboto;
+      overflow-y: auto;
+      box-sizing: border-box;
+      border: 1px solid #e1e1e1;
+      border-radius: 2px;
+      padding: 20px;
+    }
+    .content_container {
+      padding: 15px;
+      border: 1px solid #e1e1e1;
+      border-radius: 2px;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .title {
+      font-size: 22px;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #file {
+      display: none;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    #creator,
+    #created {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+      width: 100%;
+      border-bottom: 1px solid #e1e1e1;
+      position: absolute;
+      text-align: center;
+    }
+    .date_field,
+    .signer_field {
+      position: relative;
+      width: 190px;
+      font-size: 14px;
+      height: 42px;
+    }
+    .signer_field label,
+    .date_field label {
+      display: block;
+      position: relative;
+      top: 24px;
+      text-align: center;
+    }
+    .hash {
+      height: 40px;
+    }
+    .file_container label {
+      text-decoration: underline;
+      color: blue;
+    }
+    .file_container label:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <section class="certificate_template">
+    <div class="content_container">
+      <h1 class="title">Signature Certificate</h1>
+      <p class="description">I, Jimbo Fry, known by Validbook identity - realJimboFry777,</p>
+      <p class="file_container">
+        <span>by signing this statement certify, that I have read, understood and agreed to comply with all terms and conditions written in the digital file</span>
+        <input id="file" name="file" type="file" value="" />
+        " <label for="file">Select File</label> "
+      </p>
+      <p class="hash">The Signed File is uniquely identified by SHA3-256 hash value:<br/>
+        <span id="fileHash"></span> 
+      </p>
+      <div class="footer">
+        <div class="date_field">
+          <input type="text" id="created" name="created" value="" readonly />
+          <label for="created">Date</label>
+        </div>
+        <div class="signer_field">
+          <input type="text" id="creator" name="creator" value="" readonly />
+          <label for="creator">Signer</label>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
